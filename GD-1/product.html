@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://img.icons8.com/office/256/wine-glass.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main_style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e56307bebd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/product.css" />
+    <!--Anchor-->
+    <title>Buy Wine at Wines.com || Online store</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-sm navbar-dark fixed-top"
+      style="background: #ee4431"
+    >
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#mynavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="mynavbar"
+          style="margin-left: 30px"
+        >
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./wine_index.html" style="color: black"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./buy_wine.html" style="color: black"
+                >Buy Wine</a
+              >
+            </li>
+            <li class="droppable nav-item text-dark">
+              <a class="nav-link text-black">Country</a>
+              <div class="mega-menu">
+                <div class="container cf">
+                  <ul class="ul-reset">
+                    <h3>Châu Âu</h3>
+                    <li><a href="#">Anh Quốc</a></li>
+                    <li><a href="#">Pháp</a></li>
+                    <li><a href="#">Ý</a></li>
+                    <li><a href="#">Đức</a></li>
+                    <li><a href="#">Nga</a></li>
+                  </ul>
+                  <!-- .ul-reset -->
+                  <ul class="ul-reset">
+                    <h3>Châu Mỹ</h3>
+                    <li><a href="#">Brazil</a></li>
+                    <li><a href="#">Usa</a></li>
+                    <li><a href="#">Mexico</a></li>
+                    <li><a href="#">Cuba</a></li>
+                    <li><a href="#">Chile</a></li>
+                  </ul>
+                  <!-- .ul-reset -->
+                  <ul class="ul-reset">
+                    <h3>Châu Á</h3>
+                    <li><a href="#">China</a></li>
+                    <li><a href="#">Viet Nam</a></li>
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Korean</a></li>
+                    <li><a href="#">India</a></li>
+                  </ul>
+                  <!-- .ul-reset -->
+                </div>
+                <!-- .container -->
+              </div>
+              <!-- .mega-menu -->
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link dropdown-toggle"
+                href="./404.html"
+                style="color: black"
+                >Region</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0)"
+                data-bs-toggle="modal"
+                data-bs-target="#myModal_contact_us"
+                style="color: black"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <form class="d-flex justify-content-center">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Search  "
+            style="
+              width: 350px;
+              margin-right: 10px;
+              border-color: rebeccapurple;
+            "
+          />
+
+          <button
+            class="btn btn-primary"
+            style="width: 150px; margin-right: 30px"
+          >
+            Search
+          </button>
+        </form>
+        <button class="btn" style="border: none; border-radius: 5px">
+          <a href="./shopping_cart.html">
+            <img
+              src="https://img.icons8.com/emoji/256/shopping-cart-emoji.png"
+              id="dagger"
+              width="30px"
+            />
+          </a>
+        </button>
+
+        <button
+          class="btn"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+          style="border: none; border-radius: 5px; margin-left: 10px"
+        >
+          <img
+            src="https://img.icons8.com/ios/256/user.png"
+            id="dagger"
+            width="30px"
+          />
+        </button>
+      </div>
+    </nav>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Login</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="floatingPassword"
+                  placeholder="Password"
+                />
+                <label for="floatingPassword">Password</label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="rememberPasswordCheck"
+                />
+                <label class="form-check-label" for="rememberPasswordCheck">
+                  Remember password
+                </label>
+              </div>
+              <div class="d-grid">
+                <button
+                  class="btn btn-primary btn-login text-uppercase fw-bold"
+                  type="submit"
+                  style="width: 300px; margin-left: 70px"
+                >
+                  Sign in
+                </button>
+              </div>
+              <hr class="my-4" />
+              <div class="d-grid mb-2">
+                <button
+                  class="btn btn-google btn-login text-uppercase fw-bold"
+                  type="submit"
+                >
+                  <i class="fab fa-google me-2"></i> Sign in with Google
+                </button>
+              </div>
+              <div class="d-grid">
+                <button
+                  class="btn btn-facebook btn-login text-uppercase fw-bold"
+                  type="submit"
+                >
+                  <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="myModal_contact_us">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Contact Wines.com</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <section id="contact" class="contact">
+              <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                  <h2>Contact</h2>
+                  <p>Hãy viết thư cho chúng tôi nhé</p>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-5 d-flex align-items-stretch">
+                    <div class="info">
+                      <div class="address">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Location:</h4>
+                        <p>Ha Noi</p>
+                      </div>
+
+                      <div class="email">
+                        <i class="bi bi-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>thaibdtg16@gmail.com</p>
+                      </div>
+
+                      <div class="phone">
+                        <i class="bi bi-phone"></i>
+                        <h4>Call:</h4>
+                        <p>+84 333 795 423</p>
+                      </div>
+
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                        frameborder="0"
+                        style="border: 0; width: 100%; height: 290px"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                    <form>
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="name">Your Name</label>
+                          <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            id="name"
+                            required
+                          />
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="name">Your Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            id="email"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Subject</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="subject"
+                          id="subject"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Message</label>
+                        <textarea
+                          class="form-control"
+                          name="message"
+                          rows="10"
+                          required
+                        ></textarea>
+                      </div>
+                      <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">
+                          Your message has been sent. Thank you!
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit " class="btn btn-primary">
+                          Send Message
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- main -->
+    <div class="container-flex" style="margin-top: 70px">
+      <a
+        href=""
+        class="d-flex btn bg-danger-subtle fixed-bottom mx-2"
+        style="width: 200px; font-size: 23px; margin-bottom: 30px"
+        >Earn Rewards
+        <lord-icon
+          src="https://cdn.lordicon.com/mdgrhyca.json"
+          trigger="loop"
+          colors="primary:#121331,secondary:#08a88a"
+          stroke="60"
+          style="width: 50px; height: 50px"
+        >
+        </lord-icon
+      ></a>
+      <div class="row" style="margin-top: 100px; margin-left: 40px">
+        <h5>
+          <a href="">Home </a> / <a href=""> Wine</a> /
+          <a href=""> Red Wine </a>/ <a href=""> Cabernet Sauvignon </a>/
+          <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
+        </h5>
+      </div>
+      <div class="row" style="margin-top: 30px">
+        <div class="col-5">
+          <div class="card mx-5" style="width: 30rem; border: none">
+            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+            <lord-icon
+              src="https://cdn.lordicon.com/szzsfswk.json"
+              trigger="loop"
+              delay="500"
+              style="width: 100px; height: 100px"
+            >
+            </lord-icon>
+
+            <span>James Suckling</span>
+            <img src="./src/img/zyro-image.png" class="card-img-top" />
+            <a
+              href=""
+              data-bs-toggle="modal"
+              data-bs-target="#myModal_video
+              "
+              ><lord-icon
+                src="https://cdn.lordicon.com/xhitaejr.json"
+                trigger="loop"
+                delay="500"
+                style="width: 100px; height: 100px"
+              >
+              </lord-icon
+            ></a>
+            <div class="modal" id="myModal_video">
+              <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Video wine</h4>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <iframe
+                      width="1370"
+                      height="711"
+                      src="https://www.youtube.com/embed/E41G_j-RN_U"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
+                    <p>
+                      <a href="https://vimeo.com/562796213"
+                        >Carmen Gran Reserva</a
+                      >
+                      from
+                      <a href="https://vimeo.com/totalwine"
+                        >Total Wine &amp; More</a
+                      >
+                      on <a href="https://vimeo.com">Vimeo</a>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-7">
+          <h5 style="margin-top: 10px; background-color: yellow; width: 160px">
+            WINERY DIRECT*
+          </h5>
+          <h1>Carmen Gran Reserva Cabernet Sauvignon, 2020</h1>
+          <h6>750ml</h6>
+          <h5>
+            <a href="">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star" style="margin-right: 50px"></i
+            ></a>
+            <a href="">4.0 (1783)</a>
+          </h5>
+          <div>
+            <h1 style="color: red">$14.99</h1>
+            <p><del>$17.99</del></p>
+            <h4 style="color: red">
+              Limited Time Special
+              <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+              <lord-icon
+                src="https://cdn.lordicon.com/pmegrqxm.json"
+                trigger="loop"
+                delay="2000"
+                style="width: 32px; height: 32px; color: red"
+              >
+              </lord-icon>
+            </h4>
+          </div>
+          <!--  -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Chose option</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>
+                  <input type="radio" /> PICK UP <br />
+                  <span
+                    ><a href="">In stock</a><br />
+                    <p>
+                      <a href="">Sacramento (Arden) </a>- Aisle 06, Right , Bay
+                      03
+                    </p></span
+                  >
+                </td>
+                <td>
+                  <br /><button class="btn btn-primary">Nearby Stores</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>
+                  <input type="radio" /> Delivery | As fast as 2 hrs <br />
+                  <span
+                    ><br />
+                    <p>
+                      <a href="">Speed varies by store & availability </a>-
+                      Aisle 06, Right , Bay 03
+                    </p></span
+                  >
+                </td>
+                <td>
+                  <br /><button class="btn btn-primary">
+                    Check Eligibility
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>
+                  <input type="radio" /> Ship to California <br />
+                  <span>
+                    <p>
+                      <a href=""
+                        >We will ship items to your address in 1-5 days</a
+                      >- Aisle 06, Right , Bay 03
+                    </p></span
+                  >
+                </td>
+                <td>
+                  <br /><button class="btn btn-primary">Check Location</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!--  -->
+          <h4>Size</h4>
+          <br />
+          <button class="btn bg-danger-subtle">750ml (Single)</button>
+          <button class="btn bg-danger-subtle">1000ml (Single)</button>
+          <button class="btn bg-danger-subtle">1500ml (Single)</button>
+          <button class="btn bg-danger-subtle">2000ml (Single)</button>
+
+          <div class="col-lg-5 my-3">
+            <div class="input-group">
+              <button
+                type="button"
+                class="quantity-left-minus btn btn-danger btn-number"
+                data-type="minus"
+                data-field=""
+              >
+                <span class="glyphicon glyphicon-minus">- </span>
+              </button>
+              <input
+                type="text"
+                id="quantity"
+                name="quantity"
+                class="form-control input-number mx-3"
+                value="10"
+                min="1"
+                max="100"
+              />
+              <button
+                type="button"
+                class="mx-2 quantity-right-plus btn btn-success btn-number"
+                data-type="plus"
+                data-field=""
+              >
+                <span class="glyphicon glyphicon-plus">+</span>
+              </button>
+
+              <button class="btn btn-primary">
+                Add to cart <i class="fa fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          <h6>*Price, vintage and availability may vary by store.</h6>
+          <span>
+            <lord-icon
+              src="https://cdn.lordicon.com/rjzlnunf.json"
+              trigger="loop"
+              delay="2000"
+              style="width: 50px; height: 50px"
+            >
+            </lord-icon
+          ></span>
+          <h3>Bundle these deals !</h3>
+          <div class="row mx-5 my-5" style="margin-bottom: 50px">
+            <div class="card" style="width: 16rem; border: none">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="width: 16rem; margin-left: 250px; border: none"
+            >
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Ropiteau Pinot Noir</a></h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <br />
+            <div
+              style="
+                background-color: rgb(245, 248, 248);
+                width: 90%;
+                height: 200px;
+                text-align: center;
+              "
+            >
+              <br />
+              <h3 s>Price for both:</h3>
+              <h3 style="color: red">$23.98</h3>
+              <p><del>$28.00</del></p>
+              <button class="btn btn-danger">Add 2 To Cart</button>
+            </div>
+          </div>
+          <div class="row my-5">
+            <h5>Product Information</h5>
+            <h6>
+              France- Earthy, smooth, cherry and berry notes. A great candidate
+              for your house red this summer. A delish match for grilled
+              veggies, pork and bruschetta. Established in 1848, Ropiteau Freres
+              has a long history of making great Pinot Noir.
+            </h6>
+            <br />
+            <hr />
+            <div class="col-6">
+              <h5>BRAND</h5>
+              <h5>COUNTRY / STATE</h5>
+              <h5>REGION</h5>
+              <h5>WINE TYPE</h5>
+              <h5>VARIETAL</h5>
+              <h5>STYLE</h5>
+              <h5>TASTE</h5>
+              <h5>ABV</h5>
+              <h5>WINE TYPE</h5>
+              <h5>VARIETAL</h5>
+              <h5>STYLE</h5>
+              <h5>TASTE</h5>
+              <h5>ABV</h5>
+            </div>
+            <div class="col-6">
+              <p>
+                <a href=""> Ropiteau</a><br />
+                <a href="">France</a><br />
+                <a href=""> Vin De France</a><br />
+                <a href=""> Red Wine</a><br />
+                <a href="">Pinot Noir</a><br />
+                <a href=""> Fresh</a><br />
+                <a href=""> 12%</a><br />
+                <a href=""> Cherry, Red Fruit</a><br />
+                <a href="">Light-bodied</a><br />
+                <a href="">94711750-1</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-5">
+        <hr />
+        <h3 class="text-center">
+          Customers who viewed 1858 Cabernet Sauvignon Napa Valley also viewed
+        </h3>
+        <div class="container">
+          <ul class="cards">
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./src/img/zyro-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Carmen Gran Reserva</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+
+              <div class="card-link-wrapper">
+                <a href="" class="card-link">Learn More</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row mx-5">
+        <hr />
+        <h1>OVERVIEW</h1>
+        <h4>Details</h4>
+        <p>
+          France- Earthy, smooth, cherry and berry notes. A great candidate for
+          your house red this summer. A delish match for grilled veggies, pork
+          and bruschetta. Established in 1848, Ropiteau Freres has a long
+          history of making great Pinot Noir.
+        </p>
+        <h4>Producer Story</h4>
+        <p>
+          Jean-Charles’ lifelong passion for wine began as a child. His parents
+          founded Maison Ropiteau with an innovative and entrepreneurial spirit
+          in one of the most traditional winegrowing regions in the world. The
+          family vineyard sits in the heart of Burgundy in the village of
+          Meursault where they have been hand-crafting Chardonnay and Pinot Noir
+          since 1940.
+        </p>
+        <br />
+        <p>
+          Today, the family collection includes wineries in some of the world’s
+          most important regions--from Burgundy to the South of France and to
+          California’s Napa and Russian River Valleys. But no matter where the
+          wine is made, their philosophy of respect and reverence for the soul
+          of the soil and the vineyard—climat-worship—is reflected in every
+          bottle.
+        </p>
+        <br />
+        <p><a href="">Learn More</a></p>
+        <br />
+        <hr />
+      </div>
+
+      <div class="row mx-5">
+        <h1>REVIEWS</h1>
+        <br />
+        <br />
+        <div class="mx-3">
+          <h5>Rating Snapshot</h5>
+          <hr />
+          <div class="d-flex container align-items-center">
+            <div class="">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="ratings">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <h5 class="review-count">12 Reviews</h5>
+              </div>
+
+              <div
+                class="mt-5 d-flex justify-content-between align-items-center"
+              >
+                <h5 class="review-stat">Cleanliness</h5>
+                <div class="small-ratings">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+
+              <div
+                class="mt-1 d-flex justify-content-between align-items-center"
+              >
+                <h5 class="review-stat">Approachability of SLT</h5>
+                <div class="small-ratings">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+
+              <div
+                class="mt-1 d-flex justify-content-between align-items-center"
+              >
+                <h5 class="review-stat">Front Office</h5>
+                <div class="small-ratings">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+
+              <div
+                class="mt-1 d-flex justify-content-between align-items-center"
+              >
+                <h5 class="review-stat">CPD</h5>
+                <div class="small-ratings">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                </div>
+              </div>
+
+              <div
+                class="mt-1 d-flex justify-content-between align-items-center"
+              >
+                <h5 class="review-stat">Pastrol</h5>
+                <div class="small-ratings">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+
+              <div
+                class="mt-1 d-flex justify-content-between align-items-center"
+              >
+                <h5 class="review-stat">Office Space</h5>
+                <div class="small-ratings">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="justify-content-center" style="margin-left: 100px">
+            <h5>Customer Image Recommend</h5>
+            <img
+              src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/6cc94cd4-d8f6-5903-8970-70f734f21dcb"
+              alt=""
+              width="200px"
+              height="200px"
+            />
+            <img
+              src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/97c51fc8-0659-50b6-a086-172a391c0ebc"
+              alt=""
+              width="200px"
+              height="200px"
+            /><img
+              style="margin-left: 3px"
+              src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/6cc94cd4-d8f6-5903-8970-70f734f21dcb"
+              alt=""
+              width="200px"
+              height="200px"
+            />
+            <img
+              src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/97c51fc8-0659-50b6-a086-172a391c0ebc"
+              alt=""
+              width="200px"
+              height="200px"
+            /><img
+              style="margin-left: 3px"
+              src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/6cc94cd4-d8f6-5903-8970-70f734f21dcb"
+              alt=""
+              width="200px"
+              height="200px"
+            />
+          </div>
+          <br />
+          <hr />
+          <h4>Filter Reviews</h4>
+          <form class="d-flex">
+            <input
+              class="form-control me-1"
+              type="search"
+              placeholder="Search topic and reviews"
+              aria-label="Search"
+              style="width: 400px; height: 50px"
+            />
+            <button class="btn" type="submit">
+              <lord-icon
+                src="https://cdn.lordicon.com/msoeawqm.json"
+                trigger="loop"
+                delay="20"
+                style="width: 32px; height: 32px"
+              >
+              </lord-icon>
+            </button>
+          </form>
+          <div class="dropdown mt-3">
+            <button
+              class="btn border-2 border-dark dropdown-toggle text-start"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="width: 100px; height: 60px; font-size: 20px"
+            >
+              Rating
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li class="d-flex">
+                <lord-icon
+                  src="https://cdn.lordicon.com/mecwbjnp.json"
+                  trigger="loop"
+                  style="width: 40px; height: 40px"
+                >
+                </lord-icon>
+                <a class="dropdown-item" href="#"> 1 Star</a>
+              </li>
+              <li class="d-flex">
+                <lord-icon
+                  src="https://cdn.lordicon.com/mecwbjnp.json"
+                  trigger="loop"
+                  style="width: 40px; height: 40px"
+                >
+                </lord-icon>
+                <a class="dropdown-item" href="#"> 2 Star</a>
+              </li>
+              <li class="d-flex">
+                <lord-icon
+                  src="https://cdn.lordicon.com/mecwbjnp.json"
+                  trigger="loop"
+                  style="width: 40px; height: 40px"
+                >
+                </lord-icon>
+                <a class="dropdown-item" href="#"> 3 Star</a>
+              </li>
+              <li class="d-flex">
+                <lord-icon
+                  src="https://cdn.lordicon.com/mecwbjnp.json"
+                  trigger="loop"
+                  style="width: 40px; height: 40px"
+                >
+                </lord-icon>
+                <a class="dropdown-item" href="#"> 4 Star</a>
+              </li>
+              <li class="d-flex">
+                <lord-icon
+                  src="https://cdn.lordicon.com/mecwbjnp.json"
+                  trigger="loop"
+                  style="width: 40px; height: 40px"
+                >
+                </lord-icon>
+                <a class="dropdown-item" href="#"> 5 Star</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-flex mt-5">
+            <p>1-8 of 292 Reviews</p>
+          </div>
+        </div>
+        <div class="row mx-3">
+          <hr />
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="row mx-3">
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="row mx-3">
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="row mx-3">
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="row mx-3">
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="row mx-3">
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="row mx-3">
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="row mx-3">
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="row mx-3">
+          <div class="col-4">
+            <h5>Oliver Meade</h5>
+            <p>
+              <img
+                src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+              />FEATURED
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/30/null/moderator-male.png"
+              />Expert Pick
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios/40/null/falling-person.png"
+              />
+              Total Wine Employee
+            </p>
+            <p>Washington DC</p>
+            <p>Review <strong>1</strong></p>
+            <p>Vote <strong>7</strong></p>
+          </div>
+          <div class="col-8">
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+              />
+              <img
+                src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+              />
+            </p>
+            <h5>Sumptuous Napa Cab!</h5>
+            <p>a year ago</p>
+            <p>
+              This is a bold rich wine that oozes charm and sophistication.
+              Finding Napa Valley Cabernet’s that can drunk for a special
+              occasion without breaking the bank is rare but this 1858 really
+              delivers. Loaded with dark unctuous fruits, supported by sweet
+              spices with a balanced finish.
+            </p>
+            <p>
+              <img
+                src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+              />Yes,I recommend this product.
+            </p>
+            <span>Helpful?</span>
+            <p>
+              <img
+                src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+              />(7)
+              <img
+                style="margin-top: 6px"
+                src="https://img.icons8.com/color/25/null/thumbs-down.png"
+              />(1)
+            </p>
+          </div>
+          <hr />
+        </div>
+        <div class="btn-group">
+          <button class="btn">PRE</button>
+          <button class="btn">NEXT</button>
+        </div>
+      </div>
+    </div>
+    <!-- end main -->
+    <div class="container-flex mt-5">
+      <footer class="text-white text-center text-lg-start bg-danger">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row mt-4">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">About company</h5>
+
+              <p>Ở đây tôi bán rượu vang !</p>
+
+              <p>Mua thì liên hệ tui</p>
+
+              <div class="mt-4">
+                <!-- Facebook -->
+                <a class="btn btn-floating btn-warning btn-lg"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <!-- Dribbble -->
+                <a class="btn btn-floating btn-warning btn-lg"
+                  ><i class="fab fa-dribbble"></i
+                ></a>
+                <!-- Twitter -->
+                <a class="btn btn-floating btn-warning btn-lg"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <!-- Google + -->
+                <a class="btn btn-floating btn-warning btn-lg"
+                  ><i class="fab fa-google-plus-g"></i
+                ></a>
+                <!-- Linkedin -->
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4 pb-1">Email</h5>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="email"
+                  id="formControlLg"
+                  class="form-control form-control-lg"
+                  placeholder="@example.com.vn"
+                />
+                <br />
+                <button class="btn btn-primary">Submit</button>
+                <div class="form-notch">
+                  <div class="form-notch-leading" style="width: 9px"></div>
+                  <div class="form-notch-middle" style="width: 48.8px"></div>
+                  <div class="form-notch-trailing"></div>
+                </div>
+              </div>
+
+              <ul class="fa-ul" style="margin-left: 1.65em">
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-home"></i></span
+                  ><span class="ms-2">New York, NY 10012, US</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-envelope"></i></span
+                  ><span class="ms-2">info@example.com</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-phone"></i></span
+                  ><span class="ms-2">+ 01 234 567 88</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-print"></i></span
+                  ><span class="ms-2">+ 01 234 567 89</span>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+              <table class="table text-center text-white">
+                <tbody class="font-weight-normal">
+                  <tr>
+                    <td>Mon - Thu:</td>
+                    <td>8am - 9pm</td>
+                  </tr>
+                  <tr>
+                    <td>Fri - Sat:</td>
+                    <td>8am - 1am</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday:</td>
+                    <td>9am - 10pm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+          © 2023 Copyright:
+          <a class="text-white" href="https://github.com/thai16-gg">
+            <i class="fa-brands fa-github"></i> thai16-gg</a
+          >
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://img.icons8.com/office/256/wine-glass.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main_style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e56307bebd.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Anchor-->
+    <title>Home|| Online store</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav
+      class="navbar navbar-expand-sm navbar-dark fixed-top"
+      style="background: #ee4431"
+      id="navbar"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)"
+          ><img
+            src="https://www.wines.com/magical/wp-content/uploads/wines-com-420-black.png"
+            alt=""
+            width="150"
+            height="75"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mynavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="mynavbar"
+          style="margin-left: 30px"
+        >
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./wine_index.html" style="color: black"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./buy_wine.html" style="color: black"
+                >Buy Wine</a
+              >
+            </li>
+            <li class="droppable nav-item">
+              <a class="nav-link text-black">Country</a>
+              <div class="mega-menu">
+                <div class="container cf">
+                  <ul class="ul-reset">
+                    <h3>Châu Âu</h3>
+                    <li><a href="#">Anh Quốc</a></li>
+                    <li><a href="#">Pháp</a></li>
+                    <li><a href="#">Ý</a></li>
+                    <li><a href="#">Đức</a></li>
+                    <li><a href="#">Nga</a></li>
+                  </ul>
+                  <!-- .ul-reset -->
+
+                  <ul class="ul-reset">
+                    <h3>Châu Âu</h3>
+                    <li><a href="#">Anh Quốc</a></li>
+                    <li><a href="#">Pháp</a></li>
+                    <li><a href="#">Ý</a></li>
+                    <li><a href="#">Đức</a></li>
+                    <li><a href="#">Nga</a></li>
+                  </ul>
+                  <!-- .ul-reset -->
+                  <ul class="ul-reset">
+                    <h3>Châu Mỹ</h3>
+                    <li><a href="#">Brazil</a></li>
+                    <li><a href="#">Usa</a></li>
+                    <li><a href="#">Mexico</a></li>
+                    <li><a href="#">Cuba</a></li>
+                    <li><a href="#">Chile</a></li>
+                  </ul>
+                  <!-- .ul-reset -->
+                  <ul class="ul-reset">
+                    <h3>Châu Á</h3>
+                    <li><a href="#">China</a></li>
+                    <li><a href="#">Viet Nam</a></li>
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Korean</a></li>
+                    <li><a href="#">India</a></li>
+                  </ul>
+                  <ul class="ul-reset">
+                    <h3>Châu Á</h3>
+                    <li><a href="#">China</a></li>
+                    <li><a href="#">Viet Nam</a></li>
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Korean</a></li>
+                    <li><a href="#">India</a></li>
+                  </ul>
+                  <!-- .ul-reset -->
+                </div>
+                <!-- .container -->
+              </div>
+              <!-- .mega-menu -->
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link dropdown-toggle"
+                href="./404.html"
+                style="color: black"
+                >Region</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0)"
+                data-bs-toggle="modal"
+                data-bs-target="#myModal_contact_us"
+                style="color: black"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <form class="d-flex justify-content-center">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Search  "
+            style="
+              width: 350px;
+              margin-right: 10px;
+              border-color: rebeccapurple;
+            "
+          />
+
+          <button
+            class="btn btn-primary"
+            type="button"
+            style="width: 150px; margin-right: 30px"
+          >
+            Search
+          </button>
+        </form>
+        <button class="btn" style="border: none; border-radius: 5px">
+          <a href="./shopping_cart.html">
+            <img
+              src="https://img.icons8.com/emoji/256/shopping-cart-emoji.png"
+              id="dagger"
+              width="30px"
+            />
+          </a>
+        </button>
+
+        <button
+          type="button"
+          class="btn"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+          style="border: none; border-radius: 5px; margin-left: 10px"
+        >
+          <img
+            src="https://img.icons8.com/ios/256/user.png"
+            id="dagger"
+            width="30px"
+          />
+        </button>
+      </div>
+    </nav>
+    <!-- end navbar -->
+    <!-- The Modal login -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Login</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="floatingPassword"
+                  placeholder="Password"
+                />
+                <label for="floatingPassword">Password</label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="rememberPasswordCheck"
+                />
+                <label class="form-check-label" for="rememberPasswordCheck">
+                  Remember password
+                </label>
+              </div>
+              <div class="d-grid">
+                <button
+                  class="btn btn-primary btn-login text-uppercase fw-bold"
+                  type="submit"
+                  style="width: 300px; margin-left: 70px"
+                >
+                  Sign in
+                </button>
+              </div>
+              <hr class="my-4" />
+              <div class="d-grid mb-2">
+                <button
+                  class="btn btn-google btn-login text-uppercase fw-bold"
+                  type="submit"
+                >
+                  <i class="fab fa-google me-2"></i> Sign in with Google
+                </button>
+              </div>
+              <div class="d-grid">
+                <button
+                  class="btn btn-facebook btn-login text-uppercase fw-bold"
+                  type="submit"
+                >
+                  <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal login -->
+    <!-- The modal contact us -->
+    <div class="modal" id="myModal_contact_us">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Contact Wines.com</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <section id="contact" class="contact">
+              <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                  <h2>Contact</h2>
+                  <p>Hãy viết thư cho chúng tôi nhé</p>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-5 d-flex align-items-stretch">
+                    <div class="info">
+                      <div class="address">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Location:</h4>
+                        <p>Ha Noi</p>
+                      </div>
+
+                      <div class="email">
+                        <i class="bi bi-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>thaibdtg16@gmail.com</p>
+                      </div>
+
+                      <div class="phone">
+                        <i class="bi bi-phone"></i>
+                        <h4>Call:</h4>
+                        <p>+84 333 795 423</p>
+                      </div>
+
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                        frameborder="0"
+                        style="border: 0; width: 100%; height: 290px"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                    <form>
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="name">Your Name</label>
+                          <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            id="name"
+                            required
+                          />
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="name">Your Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            id="email"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Subject</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="subject"
+                          id="subject"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Message</label>
+                        <textarea
+                          class="form-control"
+                          name="message"
+                          rows="10"
+                          required
+                        ></textarea>
+                      </div>
+                      <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">
+                          Your message has been sent. Thank you!
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit " class="btn btn-primary">
+                          Send Message
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal contact us -->
+    <!-- end navbar -->
+    <!-- main -->
+    <div class="container" style="margin-top: 30px">
+      <div class="inner_wrapper fullwidth">
+        <div class="row">
+          <h1 style="text-align: center; margin-top: 100px">
+            <img
+              src="https://www.wines.com/magical/wp-content/uploads/960-250-wines-grapes.jpg"
+              alt=""
+              style="width: 1100px"
+            />
+          </h1>
+          <h4 style="text-align: center; color: #9d1809; margin-top: 20px">
+            Wine Shop – Buy Wine Online
+          </h4>
+        </div>
+        <div class="row" style="margin-left: 100px; margin-top: 20px">
+          <div
+            class="card"
+            style="
+              width: 16rem;
+              height: 400px;
+              background-color: #b4babe;
+              margin-right: 20px;
+              margin-left: 5px;
+            "
+          >
+            <img
+              src="https://www.wines.com/images/caymus.jpg"
+              class="card-img-top"
+              alt="..."
+              style="margin-top: 10px"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center" style="margin-bottom: 30px">
+                Caymus
+              </h4>
+              <a href="#" class="btn btn-primary" style="margin-left: 35px"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div
+            class="card"
+            style="
+              width: 16rem;
+              height: 400px;
+              background-color: #b4babe;
+              margin-right: 20px;
+            "
+          >
+            <img
+              src="https://www.wines.com/images/robert-mondavi.jpg"
+              class="card-img-top"
+              alt="..."
+              style="margin-top: 10px"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center" style="margin-bottom: 30px">
+                Robert Monday
+              </h4>
+              <a href="#" class="btn btn-primary" style="margin-left: 35px"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div
+            class="card"
+            style="
+              width: 16rem;
+              height: 400px;
+              background-color: #b4babe;
+              margin-right: 20px;
+            "
+          >
+            <img
+              src="https://www.wines.com/images/duckhorn.jpg"
+              class="card-img-top"
+              alt="..."
+              style="margin-top: 10px"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center" style="margin-bottom: 30px">
+                Duck Horn
+              </h4>
+              <a href="#" class="btn btn-primary" style="margin-left: 35px"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div
+            class="card"
+            style="width: 16rem; height: 400px; background-color: #b4babe"
+          >
+            <img
+              src="https://www.wines.com/images/veuve-clicquot.jpg"
+              class="card-img-top"
+              alt="..."
+              style="margin-top: 10px"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center" style="margin-bottom: 30px">
+                Campus
+              </h4>
+              <a href="#" class="btn btn-primary" style="margin-left: 35px"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h4
+            style="
+              text-align: center;
+              margin-top: 20px;
+              margin-bottom: 20px;
+              color: #9d1809;
+            "
+          >
+            Wine Specials
+          </h4>
+          <div class="col-3" style="margin-right: 30px; margin-left: 20px">
+            <div
+              class="card"
+              style="
+                background-color: #b4babe;
+                width: 330px;
+                height: 390px;
+                margin-left: 100px;
+              "
+            >
+              <img
+                src="https://www.wines.com/images/red_wine.jpg"
+                class="card-img-top"
+                alt="..."
+                style="width: 300px; height: 300px; margin: 15px"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center">Red Wine</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-3" style="margin-right: 30px">
+            <div
+              class="card"
+              style="
+                background-color: #b4babe;
+                width: 330px;
+                height: 390px;
+                margin-left: 100px;
+              "
+            >
+              <img
+                src="https://www.wines.com/images/white_wine.jpg"
+                class="card-img-top"
+                alt="..."
+                style="width: 300px; height: 300px; margin: 15px"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center">White Wine</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div
+              class="card"
+              style="
+                background-color: #b4babe;
+                width: 330px;
+                height: 390px;
+                margin-left: 100px;
+              "
+            >
+              <img
+                src="https://www.wines.com/images/rose_wine.jpg"
+                class="card-img-top"
+                alt="..."
+                style="width: 300px; height: 300px; margin: 15px"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center">Rose Wine</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 mt-5" style="margin-left: 100px">
+            <img
+              src="https://www.wines.com/magical/wp-content/uploads/forums-300x184.jpg"
+              alt=""
+              width="200px"
+              height="122px"
+              style="margin-left: 60px"
+            />
+            <p style="margin: 20px 0px; color: #9d1809">Wine Tasting Forums</p>
+            <span
+              >Join the conversation on the WineBoard. It’s one of the richest
+              sources of tasting notes and wine information on the web. Search
+              for a producer or label, post a question, share tasting notes, and
+              find bargains. Find out how long to cellar that wine, check out
+              wine and food pairings and see what others have to say about a
+              wine or winery. Over 125,000 posts from fellow wine enthusiasts.
+              Join in and browse.
+            </span>
+            <p class="text-center" style="margin: 20px 0px">
+              WINE SPECIFIC FORUMS
+            </p>
+            <!-- list link -->
+            <ul class="listlink">
+              <li><a href="">- Australia/New Zealand/South Africa</a></li>
+              <li><a href="">- Beaujolais/Gamays/Valdiguie</a></li>
+              <li><a href="">– Bordeaux </a></li>
+              <li><a href="">– Cabernet Sauvignon</a></li>
+              <li><a href="">– Champagne/Sparkling Wine</a></li>
+              <li>
+                <a href="">– Chardonnay/White Burgundy/Pinot Blanc/Melon</a>
+              </li>
+              <li><a href="">– Cognac, Armagnac & Brandy</a></li>
+              <li><a href="">– Germany/Alsace/Wines/Varieties</a></li>
+              <li><a href="">– Italian Wines/Varieties</a></li>
+              <li><a href="">– Loire Wines/Varieties/Chenin Blanc</a></li>
+              <li><a href="">– Merlot</a></li>
+              <li>
+                <a href=""
+                  >– New York/East Coast Wines Everything east of the Rockies</a
+                >
+              </li>
+              <li>
+                <a href="">– Northwest (Oregon, Washington, Idaho) Wines</a>
+              </li>
+              <li><a href="">– Pinot Noir/Red Burgundy</a></li>
+              <li><a href="">– Port/Other Fortifieds/Stickies</a></li>
+              <li><a href="">– Rhone/South of France/Wines/Varieties</a></li>
+              <li>
+                <a href="">– Sauvignon (Fume) Blanc/Semillon/White Bordeaux</a>
+              </li>
+              <li>
+                <a href=""
+                  >– South American Wines Argentina, Chile, and others</a
+                >
+              </li>
+              <li><a href="">– Spanish Wines/Varieties</a></li>
+              <li><a href="">– Zinfandel (The Real Red Stuff)</a></li>
+              <li><a href="">– Wines Not Covered in a Specific Forum</a></li>
+              <li><a href="">– Scotch and Single Malts</a></li>
+              <li><a href="">– Beer & Breweries</a></li>
+            </ul>
+          </div>
+          <div class="col-3" style="margin-left: 50px; margin-top: 20px">
+            <img
+              src="https://www.wines.com/magical/wp-content/uploads/pronounce-that.jpg"
+              alt=""
+              class="mt-5"
+            />
+            <h6 class="text-danger mt-4">Wine Pronunciation</h6>
+            <span
+              >How to pronounce English, French, German, and Italian wine
+              terms.</span
+            >
+            <h6 class="text-danger mt-4">Wine Delivery</h6>
+            <span
+              >Get wine delivered to your door at our wine shop! We offer a
+              selection of over 4,000 wine brands and top varietals from popular
+              wine regions all around the world. For the wine lover in you, we
+              have great offers from top sellers who offer wine delivery for
+              popular items like William Hill Chardonnay, Barefoot Moscato,
+              Belaire Rosé, and brands like Stella Rosa, Carlo Rossi, Dom
+              Perignon, and more.</span
+            >
+            <br /><br />
+            <ul>
+              <li><a href="">Dry Wine</a></li>
+              <li><a href="">Champagne</a></li>
+              <li><a href="">Prosecco Wine</a></li>
+              <li><a href="">Rosé Wine</a></li>
+              <li><a href="">Plum Wine</a></li>
+              <li><a href="">Organic Wine</a></li>
+            </ul>
+            <h6 class="text-danger mt-4">Sulfite-Free Wines</h6>
+            <span
+              >A discussion of Sulfite Free Wines and the options available to
+              sensitive wine drinkers.</span
+            >
+            <h6 class="text-danger mt-4">Wine Encyclopedia</h6>
+            <span
+              >The Wine Encyclopedia is a great online resource to look up wine
+              terms and browse a searchable database of wine information.</span
+            >
+            <h6 class="text-danger mt-4">Wine FAQ</h6>
+            <span
+              >Check out our FAQ to find answer to commonly asked questions
+              about wine serving and wine storage, wine tasting and much
+              more.</span
+            >
+          </div>
+          <div class="col-3 mt-5" style="margin-left: 30px">
+            <iframe
+              width="330"
+              height="215"
+              src="https://www.youtube.com/embed/-3EuPy75nI0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <h6 class="text-danger mt-3">Wine Pronunciation</h6>
+            <span
+              >Explore wine in over 150 videos covering all the basics of major
+              wine varietals and some you may not have heard of. Watch our
+              sommelier wine tastings and interesting examples of wine and food
+              pairings, plus winemaker interviews and more.</span
+            >
+            <ul class="mt-4">
+              <li><a href="">Popular Wines</a></li>
+              <li><a href="">Wine & Food Pairings</a></li>
+              <li><a href="">Tips & Misc Topics</a></li>
+              <li><a href="">Collectible & Rare Wines</a></li>
+              <li><a href="">Wine Regions</a></li>
+              <li><a href="">Wine Tastings</a></li>
+              <li><a href="">Winemaker Interviews</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end main -->
+    <!-- footer -->
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <div class="container-flex mt-5">
+      <footer class="text-white text-center text-lg-start bg-danger">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row mt-4">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">About company</h5>
+
+              <p>Ở đây tôi bán rượu vang !</p>
+
+              <p>Mua thì liên hệ tui</p>
+
+              <div class="mt-4">
+                <!-- Facebook -->
+                <a type="button" class="btn btn-floating btn-warning btn-lg"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <!-- Dribbble -->
+                <a type="button" class="btn btn-floating btn-warning btn-lg"
+                  ><i class="fab fa-dribbble"></i
+                ></a>
+                <!-- Twitter -->
+                <a type="button" class="btn btn-floating btn-warning btn-lg"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <!-- Google + -->
+                <a type="button" class="btn btn-floating btn-warning btn-lg"
+                  ><i class="fab fa-google-plus-g"></i
+                ></a>
+                <!-- Linkedin -->
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4 pb-1">Email</h5>
+
+              <div class="form-outline form-white mb-4">
+                <input
+                  type="email"
+                  id="formControlLg"
+                  class="form-control form-control-lg"
+                  placeholder="@example.com.vn"
+                />
+                <br />
+                <button class="btn btn-primary">Submit</button>
+                <div class="form-notch">
+                  <div class="form-notch-leading" style="width: 9px"></div>
+                  <div class="form-notch-middle" style="width: 48.8px"></div>
+                  <div class="form-notch-trailing"></div>
+                </div>
+              </div>
+
+              <ul class="fa-ul" style="margin-left: 1.65em">
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-home"></i></span
+                  ><span class="ms-2">New York, NY 10012, US</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-envelope"></i></span
+                  ><span class="ms-2">info@example.com</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-phone"></i></span
+                  ><span class="ms-2">+ 01 234 567 88</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-print"></i></span
+                  ><span class="ms-2">+ 01 234 567 89</span>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+              <table class="table text-center text-white">
+                <tbody class="font-weight-normal">
+                  <tr>
+                    <td>Mon - Thu:</td>
+                    <td>8am - 9pm</td>
+                  </tr>
+                  <tr>
+                    <td>Fri - Sat:</td>
+                    <td>8am - 1am</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday:</td>
+                    <td>9am - 10pm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+          © 2023 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">Dthai</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </div>
+    <!-- End of .container -->
+    <!-- end footer -->
+  </body>
+</html>

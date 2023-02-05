@@ -1,0 +1,139 @@
+h3 {
+  margin-left: 30px;
+}
+a:hover {
+  text-decoration: underline;
+  color: red;
+}
+li {
+  list-style: none;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.ul-reset {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+/* #Navigation Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+nav {
+  background: #424242;
+  font-size: 0;
+  position: relative;
+}
+nav > ul > li {
+  display: inline-block;
+  padding: 0 15px;
+  position: relative;
+}
+nav > ul > li:first-child {
+  padding-left: 0;
+}
+nav > ul > li:last-child {
+  padding-right: 0;
+}
+/* nav > ul > li > a {
+  color: #fff;
+  display: block;
+  position: relative;
+  padding: 20px 0;
+  border-bottom: 3px solid transparent;
+} */
+nav > ul > li:hover > a {
+  border-bottom: 3px solid #69aae0;
+}
+
+/* #Mega Menu Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.mega-menu {
+  background: #f0f0f0;
+  display: none;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+}
+.mega-menu h3 {
+  color: #444;
+}
+.mega-menu ul {
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  width: 205px;
+}
+.mega-menu ul:last-child {
+  margin-right: 0;
+}
+.mega-menu a {
+  color: #4ea3d8;
+  display: block;
+  padding: 10px 0;
+}
+.mega-menu a:hover {
+  color: #2d6a91;
+}
+
+/* #Droppable Class Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.droppable {
+  position: static;
+}
+.droppable > a:after {
+  content: "\f107";
+  font-family: FontAwesome;
+  font-size: 12px;
+  padding-left: 6px;
+  position: relative;
+  top: -1px;
+}
+.droppable:hover .mega-menu {
+  display: block;
+}
+.top-container {
+  margin-top: 70px;
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+a {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+
+a::before {
+  background: hsl(45 100% 70%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+#basic-dark-trigger:hover {
+  background-color: #04121b;
+  color: red;
+}
+#btn1:hover {
+  background-color: antiquewhite;
+}
+img {
+  transform: scale(0.7);
+}
