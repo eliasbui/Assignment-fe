@@ -1,11 +1,7 @@
-Assignment
-WineShopping
+# Assignment
 
-preview photos
-
-
-
-
+-- WineShopping
+-- preview photos
 -- Checkout
 ![image](https://user-images.githubusercontent.com/88380128/216818231-207ede40-213e-49ac-b0f6-a329d176b9e1.png)
 --Shopping cart
