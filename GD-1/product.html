@@ -378,7 +378,7 @@
       </div>
       <div class="row" style="margin-top: 30px">
         <div class="col-5">
-          <div class="card mx-5" style="width: 30rem; border: none">
+          <div class="card mx-5" style="width: auto; border: none">
             <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
             <lord-icon
               src="https://cdn.lordicon.com/szzsfswk.json"
@@ -444,18 +444,18 @@
           <h5 style="margin-top: 10px; background-color: yellow; width: 160px">
             WINERY DIRECT*
           </h5>
-          <h1>Carmen Gran Reserva Cabernet Sauvignon, 2020</h1>
+          <h4>Carmen Gran Reserva Cabernet Sauvignon, 2020</h4>
           <h6>750ml</h6>
-          <h5>
+          <p>
             <a href="">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               <i class="fa-regular fa-star" style="margin-right: 50px"></i
             ></a>
             <a href="">4.0 (1783)</a>
-          </h5>
+          </p>
           <div>
-            <h1 style="color: red">$14.99</h1>
+            <h3 style="color: red">$14.99</h3>
             <p><del>$17.99</del></p>
             <h4 style="color: red">
               Limited Time Special
@@ -538,38 +538,29 @@
           <button class="btn bg-danger-subtle">1500ml (Single)</button>
           <button class="btn bg-danger-subtle">2000ml (Single)</button>
 
-          <div class="col-lg-5 my-3">
-            <div class="input-group">
-              <button
-                type="button"
-                class="quantity-left-minus btn btn-danger btn-number"
-                data-type="minus"
-                data-field=""
-              >
-                <span class="glyphicon glyphicon-minus">- </span>
-              </button>
-              <input
-                type="text"
-                id="quantity"
-                name="quantity"
-                class="form-control input-number mx-3"
-                value="10"
-                min="1"
-                max="100"
-              />
-              <button
-                type="button"
-                class="mx-2 quantity-right-plus btn btn-success btn-number"
-                data-type="plus"
-                data-field=""
-              >
-                <span class="glyphicon glyphicon-plus">+</span>
-              </button>
+          <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+            <button
+              class="btn btn-link px-2"
+              onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
 
-              <button class="btn btn-primary">
-                Add to cart <i class="fa fa-shopping-cart"></i>
-              </button>
-            </div>
+            <input
+              id="form1"
+              min="0"
+              name="quantity"
+              value="1"
+              type="number"
+              class="form-control form-control-sm"
+            />
+
+            <button
+              class="btn btn-link px-2"
+              onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
           </div>
           <h6>*Price, vintage and availability may vary by store.</h6>
           <span>
@@ -583,7 +574,7 @@
           ></span>
           <h3>Bundle these deals !</h3>
           <div class="row mx-5 my-5" style="margin-bottom: 50px">
-            <div class="card" style="width: 16rem; border: none">
+            <div class="card col-auto mx-5" style="width: 16rem; border: none">
               <img
                 src="./src/img/zyro-image.png"
                 class="card-img-top"
@@ -597,10 +588,7 @@
                 </p>
               </div>
             </div>
-            <div
-              class="card"
-              style="width: 16rem; margin-left: 250px; border: none"
-            >
+            <div class="card col-auto" style="width: 16rem; border: none">
               <img
                 src="./src/img/zyro-image.png"
                 class="card-img-top"

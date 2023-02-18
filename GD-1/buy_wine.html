@@ -22,10 +22,12 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/buy.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./js/buy.js"></script>
     <!--Anchor-->
     <title>Buy Wine at Wines.com || Online store</title>
   </head>
-  <body>
+  <body ng-app="assignment" ng-controller="assignmentController">
     <nav
       class="navbar navbar-expand-sm navbar-dark fixed-top"
       style="background: #ee4431"
@@ -115,20 +117,14 @@
           <input
             class="form-control"
             type="text"
-            placeholder="Search  "
+            placeholder="Search by name"
             style="
               width: 350px;
               margin-right: 10px;
               border-color: rebeccapurple;
             "
+            ng-model="SearchText.name" 
           />
-
-          <button
-            class="btn btn-primary"
-            style="width: 150px; margin-right: 30px"
-          >
-            Search
-          </button>
         </form>
         <button class="btn" style="border: none; border-radius: 5px">
           <a href="./shopping_cart.html">
@@ -164,6 +160,7 @@
       /></a>
       <p>Welcome to wineshop you can find anything of wine in here !</p>
     </div>
+    <!-- modal login -->
     <div class="modal" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -366,1165 +363,890 @@
       </div>
     </div>
     <!-- end nav -->
+    <!-- main -->
     <div class="container-flex mx-5">
       <div class="row mt-4">
-        <div class="col-8">
-          <p style="font-size: 17px; float: left">
-            <i
-              ><a href=""><strong>401</strong></a> items found for
-              <a href=""><strong>Australia</strong></a
-              >. Showing 1-30 of 401 items.</i
-            >
-          </p>
-          <div class="dropdown d-flex justify-content-lg-end">
-            <button
-              class="btn dropdown-toggle"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Sort by newest
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Rating</a></li>
-              <li><a class="dropdown-item" href="#">Price Low to High</a></li>
-              <li><a class="dropdown-item" href="#">Price High to Low</a></li>
-            </ul>
-          </div>
-          <hr />
-          <div class="row">
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href="./product.html">
-                      Carmen Gran Reserva Cabernet Sauvignon, 2020</a
-                    >
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
+        <p style="font-size: 15px; float: left">
+          <i
+            ><a href=""><strong>401</strong></a> items found for
+            <a href=""><strong>Australia</strong></a
+            >. Showing 1-30 of 401 items.</i
+          >
+        </p>
+        <div class="dropdown d-flex justify-content-lg-end">
+          <button
+            class="btn dropdown-toggle"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Sort by newest
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Rating</a></li>
+            <li><a class="dropdown-item" href="#">Price Low to High</a></li>
+            <li><a class="dropdown-item" href="#">Price High to Low</a></li>
+          </ul>
+        </div>
+        <hr />
+        <!-- card item -->
+        <div class="row mx-3">
+          <div class="col-auto mb-3" ng-repeat="wine in wines|filter :SearchText">
+            <div class="card" style="width: 17rem">
+              <span class="mx-2 my-3" style="background-color: yellow">
+                <a href="">{{wine.title}} *</a>
+              </span>
+              <img
+                src="{{wine.image}}"
+                class="card-img-top"
+                alt="..."
+                data-bs-toggle="modal"
+                data-bs-target="#fullScreenModal"
+                ng-click="detailWine(wine)"
+              />
+              <div class="card-body">
+                <h6 class="card-title">
                   <a
-                    href="#"
-                    class="btn btn-primary"
+                    href=""
                     data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                    id="basic-dark-trigger"
-                    ><h4>Add to Cart</h4></a
+                    data-bs-target="#fullScreenModal"
+                    ng-click="detailWine(wine)"
+                    >{{wine.name}}</a
                   >
-                  <!-- Button trigger modal -->
-
-                  <!-- Modal -->
-                  <div
-                    class="modal fade"
-                    id="exampleModal"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
+                </h6>
+                <p class="card-text">{{wine.size}}ml</p>
+                <p class="card-text">
+                  <a href="">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i
+                  ></a>
+                  <a href="">{{wine.reviews}} reviews</a>
+                </p>
+                <p class="card-text text-danger">
+                  <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                  <lord-icon
+                    src="https://cdn.lordicon.com/pmegrqxm.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width: 12px; height: 12px"
                   >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
-                            Notification message popups
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">
-                          <h4>Thêm sản phẩm thành công</h4>
-                          <br />
-                          Vui lòng nhấn vào giỏ hàng để chỉnh sửa số lượng sản
-                          phầm
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      id="btn1"
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
+                  </lord-icon>
+                  ${{wine.price}}
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  id="basic-dark-trigger"
+                  >Add to Cart</a
                 >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 21rem">
-                <strong
-                  class="mx-2 my-3"
-                  style="width: 180px; background-color: yellow"
-                >
-                  <a href="">WINNER DIRECT *</a>
-                </strong>
-                <img
-                  src="./src/img/zyro-image.png"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a href=""> Carmen Gran Reserva Cabernet Sauvignon, 2020</a>
-                  </h5>
-                  <p class="card-text">750ml</p>
-                  <h5 class="card-text">
-                    <a href="">
-                      <i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i
-                      ><i class="fa-solid fa-star"></i>
-                      <i
-                        class="fa-regular fa-star"
-                        style="margin-right: 50px"
-                      ></i
-                    ></a>
-                    <a href="">1164 reviews</a>
-                  </h5>
-                  <br />
-                  <h4 class="card-text text-danger">
-                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-                    <lord-icon
-                      src="https://cdn.lordicon.com/pmegrqxm.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 32px; height: 32px"
-                    >
-                    </lord-icon>
-                    $14.99
-                  </h4>
-                  <span><del>$17.99</del></span>
-                  <br />
-                  <p>Pick Up <a href="">In Stock</a></p>
-                  <span></span>
-                  <a href="#" class="btn btn-primary"><h4>Add to Cart</h4></a>
-                  <a href="" class="btn"
-                    ><lord-icon
-                      src="https://cdn.lordicon.com/rjzlnunf.json"
-                      trigger="loop"
-                      delay="2000"
-                      style="width: 50px; height: 50px; margin-left: 50px"
-                    >
-                    </lord-icon
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <!-- item in here -->
-          <div class="row">
-            <div
-              class="btn-toolbar"
-              role="toolbar"
-              style="margin-left: 300px"
-              aria-label="Toolbar with button groups"
-            >
-              <div class="btn-group mx-2" role="group" aria-label="First group">
-                <button type="button" class="btn btn-secondary">1</button>
-                <button type="button" class="btn btn-secondary">2</button>
-                <button type="button" class="btn btn-secondary">3</button>
-                <button type="button" class="btn btn-secondary">4</button>
-              </div>
-              <div
-                class="btn-group mx-2"
-                role="group"
-                aria-label="Second group"
-              >
-                <button type="button" class="btn btn-secondary">5</button>
-                <button type="button" class="btn btn-secondary">6</button>
-                <button type="button" class="btn btn-secondary">7</button>
-              </div>
-              <div class="btn-group" role="group" aria-label="Third group">
-                <button type="button" class="btn btn-secondary">8</button>
-                <button type="button" class="btn btn-secondary">--></button>
+                <a href="" class="btn"
+                  ><lord-icon
+                    id="btn1"
+                    src="https://cdn.lordicon.com/rjzlnunf.json"
+                    trigger="loop"
+                    delay="100"
+                    style="width: 35px; height: 50px; margin-left: 20px"
+                  >
+                  </lord-icon
+                ></a>
               </div>
             </div>
           </div>
         </div>
+        <!-- full screen detail -->
+        <div class="modal" id="fullScreenModal" ng-show="showDetail">
+          <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Product Details</h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
 
-        <div class="col-4">
-          <h3 style="margin-bottom: 21px">Popular</h3>
-          <hr />
-          <br />
-          <ul>
-            <li><a href="">Wine Categories</a></li>
-            <li><a href="">Wine Brands</a></li>
-            <li><a href="">Red Wine</a></li>
-            <li><a href="">Cabernet Sauvignon</a></li>
-            <li><a href="">Merlot</a></li>
-            <li><a href="">Dry Wine</a></li>
-            <li><a href="">White Wine</a></li>
-            <li><a href="">Chardonnay</a></li>
-            <li><a href="">Sauvignon Blanc</a></li>
-            <li><a href="">Champagne</a></li>
-            <li><a href="">Prosecco Wine</a></li>
-            <li><a href="">Rosé Wine</a></li>
-            <li><a href="">Dessert, Sherry, & Port</a></li>
-            <li><a href="">Plum Wine</a></li>
-            <li><a href="">Ice Wine</a></li>
-            <li><a href="">Organic Wine </a></li>
-          </ul>
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="container-flex">
+                  <a
+                    href=""
+                    class="d-flex btn bg-danger-subtle fixed-bottom mx-2"
+                    style="width: 200px; font-size: 23px; margin-bottom: 30px"
+                    >Earn Rewards
+                    <lord-icon
+                      src="https://cdn.lordicon.com/mdgrhyca.json"
+                      trigger="loop"
+                      colors="primary:#121331,secondary:#08a88a"
+                      stroke="60"
+                      style="width: 50px; height: 50px"
+                    >
+                    </lord-icon
+                  ></a>
+                  <div class="row" style="margin-left: 40px">
+                    <h5>
+                      <a href="">Home </a> / <a href=""> Wine</a> /
+                      <a href=""> Red Wine </a>/
+                      <a href=""> Cabernet Sauvignon </a>/
+                      <a href=""> {{selectWine.name}}</a>
+                    </h5>
+                  </div>
+                  <div class="row" style="margin-top: 30px">
+                    <div class="col-5">
+                      <div class="card mx-5" style="width: auto; border: none">
+                        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                        <lord-icon
+                          src="https://cdn.lordicon.com/szzsfswk.json"
+                          trigger="loop"
+                          delay="500"
+                          style="width: 100px; height: 100px"
+                        >
+                        </lord-icon>
+
+                        <span>{{selectWine.manufacturers}}</span>
+                        <img src="{{selectWine.image}}" class="card-img-top" />
+                        <a
+                          href=""
+                          data-bs-toggle="modal"
+                          data-bs-target="#myModal_video
+                          "
+                          ><lord-icon
+                            src="https://cdn.lordicon.com/xhitaejr.json"
+                            trigger="loop"
+                            delay="500"
+                            style="width: 100px; height: 100px"
+                          >
+                          </lord-icon
+                        ></a>
+                        <div class="modal" id="myModal_video">
+                          <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title">Video wine</h4>
+                                <button
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                ></button>
+                              </div>
+                              <div class="modal-body">
+                                <iframe
+                                  width="1370"
+                                  height="711"
+                                  src="https://www.youtube.com/embed/E41G_j-RN_U"
+                                  title="YouTube video player"
+                                  frameborder="0"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                  allowfullscreen
+                                ></iframe>
+                                <p>
+                                  <a href="https://vimeo.com/562796213"
+                                    >{{selectWine.name}}</a
+                                  >
+                                  from
+                                  <a href="https://vimeo.com/totalwine"
+                                    >Total Wine &amp; More</a
+                                  >
+                                  on <a href="https://vimeo.com">Vimeo</a>.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-7">
+                      <h5
+                        style="
+                          margin-top: 10px;
+                          background-color: yellow;
+                          width: auto;
+                        "
+                      >
+                        {{selectWine.title}}
+                      </h5>
+                      <h4>{{selectWine.name}}</h4>
+                      <h6>{{selectWine.size}}ml</h6>
+                      <p>
+                        <a href="">
+                          <i class="fa-solid fa-star"></i
+                          ><i class="fa-solid fa-star"></i
+                          ><i class="fa-solid fa-star"></i
+                          ><i class="fa-solid fa-star"></i>
+                          <i
+                            class="fa-regular fa-star"
+                            style="margin-right: 50px"
+                          ></i
+                        ></a>
+                        <a href="">4.0 ({{selectWine.reviews}})</a>
+                      </p>
+                      <div>
+                        <h3 style="color: red">${{selectWine.price}}</h3>
+                        <p style="text-decoration: underline">
+                          {{selectWine.quantity}} Product in Store , Shopping
+                          Now !
+                        </p>
+                        <h4 style="color: red">
+                          {{selectWine.categories}}
+                          <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                          <lord-icon
+                            src="https://cdn.lordicon.com/pmegrqxm.json"
+                            trigger="loop"
+                            delay="2000"
+                            style="width: 32px; height: 32px; color: red"
+                          >
+                          </lord-icon>
+                        </h4>
+                      </div>
+                      <!--  -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Chose option</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>
+                              <input type="radio" /> PICK UP <br />
+                              <span
+                                ><a href="">In stock</a><br />
+                                <p>
+                                  <a href="">Sacramento (Arden) </a>- Aisle 06,
+                                  Right , Bay 03
+                                </p></span
+                              >
+                            </td>
+                            <td>
+                              <br /><button class="btn btn-primary">
+                                Nearby Stores
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>
+                              <input type="radio" /> Delivery | As fast as 2 hrs
+                              <br />
+                              <span
+                                ><br />
+                                <p>
+                                  <a href=""
+                                    >Speed varies by store & availability </a
+                                  >- Aisle 06, Right , Bay 03
+                                </p></span
+                              >
+                            </td>
+                            <td>
+                              <br /><button class="btn btn-primary">
+                                Check Eligibility
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>
+                              <input type="radio" /> Ship to California <br />
+                              <span>
+                                <p>
+                                  <a href=""
+                                    >We will ship items to your address in 1-5
+                                    days</a
+                                  >- Aisle 06, Right , Bay 03
+                                </p></span
+                              >
+                            </td>
+                            <td>
+                              <br /><button class="btn btn-primary">
+                                Check Location
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!--  -->
+                      <h4>Size</h4>
+                      <br />
+                      <form action="">
+                        <p>Please select your size :</p>
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                        <label for="html">{{selectWine.size}}ml</label><br>
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                        <label for="css">2000ml</label><br>
+                        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                        <label for="javascript">3000ml</label>
+                        <br>  
+                      </form>
+                      </button>
+
+                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                        <button
+                          class="btn btn-link px-2"
+                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+
+                        <input
+                          id="form1"
+                          min="0"
+                          name="quantity"
+                          value="1"
+                          type="number"
+                          class="form-control form-control-sm"
+                        />
+
+                        <button
+                          class="btn btn-link px-2"
+                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                        >
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                      <h6>
+                        *Price, vintage and availability may vary by store.
+                      </h6>
+                      <button class="btn btn-primary">Add to cart</button>
+                      <h3>Bundle these deals !</h3>
+                      <div class="row mx-5 my-5" style="margin-bottom: 50px">
+                        <div
+                          class="card col-auto mx-5"
+                          style="width: 16rem; border: none"
+                        >
+                          <img
+                            src="./src/img/zyro-image.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="card-body">
+                            <h5 class="card-title">Carmen Gran Reserva</h5>
+                            <p class="card-text">
+                              Some quick example text to build on the card title
+                              and make up the bulk of the card's content.
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="card col-auto"
+                          style="width: 16rem; border: none"
+                        >
+                          <img
+                            src="./src/img/zyro-image.png"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <a href="">Ropiteau Pinot Noir</a>
+                            </h5>
+                            <p class="card-text">
+                              Some quick example text to build on the card title
+                              and make up the bulk of the card's content.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <br />
+                        <div
+                          style="
+                            background-color: rgb(245, 248, 248);
+                            width: 90%;
+                            height: 200px;
+                            text-align: center;
+                          "
+                        >
+                          <br />
+                          <h3 s>Price for both:</h3>
+                          <h3 style="color: red">$23.98</h3>
+                          <p><del>$28.00</del></p>
+                          <button class="btn btn-danger">Add 2 To Cart</button>
+                        </div>
+                      </div>
+                      <div class="row my-5">
+                        <h5>Product Information</h5>
+                        <h6>
+                          France- Earthy, smooth, cherry and berry notes. A
+                          great candidate for your house red this summer. A
+                          delish match for grilled veggies, pork and bruschetta.
+                          Established in 1848, Ropiteau Freres has a long
+                          history of making great Pinot Noir.
+                        </h6>
+                        <br />
+                        <hr />
+                        <div class="col-6">
+                          <h5>NAME</h5>
+                          <h5>PRICE</h5>
+                          <h5>QUANTITY</h5>
+                          <h5>COUNTY</h5>
+                          <h5>YEAR OF PRODUCT</h5>
+                          <h5>MANUFACTURERS</h5>
+                          <h5>SIZE</h5>
+                          <h5>TITTLE</h5>
+                          <h5>REVIEWS</h5>
+                          <h5>ID</h5>
+                        </div>
+                        <div class="col-6">
+                          <a href=""><h5>{{selectWine.name}}</h5></a>
+                          <a href=""> <h5>{{selectWine.price}}$</h5></a>
+                          <a href=""> <h5>{{selectWine.quantity}}</h5></a>
+                          <a href=""> <h5>{{selectWine.country}}</h5></a>
+                          <a href="">
+                            <h5>{{selectWine.year_of_production}}</h5></a
+                          >
+                          <a href=""> <h5>{{selectWine.manufacturers}}</h5></a>
+                          <a href=""> <h5>{{selectWine.size}}ml</h5></a>
+                          <a href=""> <h5>{{selectWine.title}}</h5></a>
+                          <a href=""> <h5>{{selectWine.reviews}}</h5></a>
+                          <a href=""> <h5>{{selectWine.id}}</h5></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mx-5">
+                    <hr />
+                    <h3 class="text-center">
+                      Customers who viewed 1858 Cabernet Sauvignon Napa Valley
+                      also viewed
+                    </h3>
+                    <div class="container">
+                      <ul class="cards" >
+                        <li class="card"ng-repeat="wine in wines">
+                          <img
+                            src="{{wine.image}}"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                          <div class="card-body">
+                            <h5 class="card-title">{{wine.name}}</h5>
+                            <p class="card-text">
+                              {{wine.title}}
+                            </p>
+                          </div>
+
+                          <div class="card-link-wrapper">
+                            <a href="" class="card-link">Learn More</a>
+                          </div>
+                        </li>
+                    </div>
+                  </div>
+                  <div class="row mx-5">
+                    <hr />
+                    <h1>OVERVIEW</h1>
+                    <h4>Details</h4>
+                    <p>
+                      France- Earthy, smooth, cherry and berry notes. A great
+                      candidate for your house red this summer. A delish match
+                      for grilled veggies, pork and bruschetta. Established in
+                      1848, Ropiteau Freres has a long history of making great
+                      Pinot Noir.
+                    </p>
+                    <h4>Producer Story</h4>
+                    <p>
+                      Jean-Charles’ lifelong passion for wine began as a child.
+                      His parents founded Maison Ropiteau with an innovative and
+                      entrepreneurial spirit in one of the most traditional
+                      winegrowing regions in the world. The family vineyard sits
+                      in the heart of Burgundy in the village of Meursault where
+                      they have been hand-crafting Chardonnay and Pinot Noir
+                      since 1940.
+                    </p>
+                    <br />
+                    <p>
+                      Today, the family collection includes wineries in some of
+                      the world’s most important regions--from Burgundy to the
+                      South of France and to California’s Napa and Russian River
+                      Valleys. But no matter where the wine is made, their
+                      philosophy of respect and reverence for the soul of the
+                      soil and the vineyard—climat-worship—is reflected in every
+                      bottle.
+                    </p>
+                    <br />
+                    <p><a href="">Learn More</a></p>
+                    <br />
+                    <hr />
+                  </div>
+                  <div class="row mx-5">
+                    <h1>REVIEWS</h1>
+                    <br />
+                    <br />
+                    <div class="mx-3">
+                      <h5>Rating Snapshot</h5>
+                      <hr />
+                      <div class="d-flex container align-items-center">
+                        <div class="">
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <div class="ratings">
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star"></i>
+                            </div>
+                            <h5 class="review-count">12 Reviews</h5>
+                          </div>
+
+                          <div
+                            class="mt-5 d-flex justify-content-between align-items-center"
+                          >
+                            <h5 class="review-stat">Cleanliness</h5>
+                            <div class="small-ratings">
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                            </div>
+                          </div>
+
+                          <div
+                            class="mt-1 d-flex justify-content-between align-items-center"
+                          >
+                            <h5 class="review-stat">Approachability of SLT</h5>
+                            <div class="small-ratings">
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star"></i>
+                            </div>
+                          </div>
+
+                          <div
+                            class="mt-1 d-flex justify-content-between align-items-center"
+                          >
+                            <h5 class="review-stat">Front Office</h5>
+                            <div class="small-ratings">
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                            </div>
+                          </div>
+
+                          <div
+                            class="mt-1 d-flex justify-content-between align-items-center"
+                          >
+                            <h5 class="review-stat">CPD</h5>
+                            <div class="small-ratings">
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                            </div>
+                          </div>
+
+                          <div
+                            class="mt-1 d-flex justify-content-between align-items-center"
+                          >
+                            <h5 class="review-stat">Pastrol</h5>
+                            <div class="small-ratings">
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                            </div>
+                          </div>
+
+                          <div
+                            class="mt-1 d-flex justify-content-between align-items-center"
+                          >
+                            <h5 class="review-stat">Office Space</h5>
+                            <div class="small-ratings">
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star rating-color"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      <div
+                        class="justify-content-center"
+                        style="margin-left: 100px"
+                      >
+                        <h5>Customer Image Recommend</h5>
+                        <img
+                          src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/6cc94cd4-d8f6-5903-8970-70f734f21dcb"
+                          alt=""
+                          width="200px"
+                          height="200px"
+                        />
+                        <img
+                          src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/97c51fc8-0659-50b6-a086-172a391c0ebc"
+                          alt=""
+                          width="200px"
+                          height="200px"
+                        /><img
+                          style="margin-left: 3px"
+                          src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/6cc94cd4-d8f6-5903-8970-70f734f21dcb"
+                          alt=""
+                          width="200px"
+                          height="200px"
+                        />
+                        <img
+                          src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/97c51fc8-0659-50b6-a086-172a391c0ebc"
+                          alt=""
+                          width="200px"
+                          height="200px"
+                        /><img
+                          style="margin-left: 3px"
+                          src="https://photos-us.bazaarvoice.com/photo/2/cGhvdG86dG90YWx3aW5l/6cc94cd4-d8f6-5903-8970-70f734f21dcb"
+                          alt=""
+                          width="200px"
+                          height="200px"
+                        />
+                      </div>
+                      <br />
+                      <hr />
+                      <h4>Filter Reviews</h4>
+                      <form class="d-flex">
+                        <input
+                          class="form-control me-1"
+                          type="search"
+                          placeholder="Search topic and reviews"
+                          aria-label="Search"
+                          style="width: 400px; height: 50px"
+                        />
+                        <button class="btn" type="submit">
+                          <lord-icon
+                            src="https://cdn.lordicon.com/msoeawqm.json"
+                            trigger="loop"
+                            delay="20"
+                            style="width: 32px; height: 32px"
+                          >
+                          </lord-icon>
+                        </button>
+                      </form>
+                      <div class="dropdown mt-3">
+                        <button
+                          class="btn border-2 border-dark dropdown-toggle text-start"
+                          type="button"
+                          id="dropdownMenuButton1"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                          style="width: 100px; height: 60px; font-size: 20px"
+                        >
+                          Rating
+                        </button>
+                        <ul
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton1"
+                        >
+                          <li class="d-flex">
+                            <lord-icon
+                              src="https://cdn.lordicon.com/mecwbjnp.json"
+                              trigger="loop"
+                              style="width: 40px; height: 40px"
+                            >
+                            </lord-icon>
+                            <a class="dropdown-item" href="#"> 1 Star</a>
+                          </li>
+                          <li class="d-flex">
+                            <lord-icon
+                              src="https://cdn.lordicon.com/mecwbjnp.json"
+                              trigger="loop"
+                              style="width: 40px; height: 40px"
+                            >
+                            </lord-icon>
+                            <a class="dropdown-item" href="#"> 2 Star</a>
+                          </li>
+                          <li class="d-flex">
+                            <lord-icon
+                              src="https://cdn.lordicon.com/mecwbjnp.json"
+                              trigger="loop"
+                              style="width: 40px; height: 40px"
+                            >
+                            </lord-icon>
+                            <a class="dropdown-item" href="#"> 3 Star</a>
+                          </li>
+                          <li class="d-flex">
+                            <lord-icon
+                              src="https://cdn.lordicon.com/mecwbjnp.json"
+                              trigger="loop"
+                              style="width: 40px; height: 40px"
+                            >
+                            </lord-icon>
+                            <a class="dropdown-item" href="#"> 4 Star</a>
+                          </li>
+                          <li class="d-flex">
+                            <lord-icon
+                              src="https://cdn.lordicon.com/mecwbjnp.json"
+                              trigger="loop"
+                              style="width: 40px; height: 40px"
+                            >
+                            </lord-icon>
+                            <a class="dropdown-item" href="#"> 5 Star</a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="d-flex mt-5">
+                        <p>1-8 of 292 Reviews</p>
+                      </div>
+                    </div>
+                    <div class="row mx-3">
+                      <hr />
+                      <div class="col-4">
+                        <h5>Oliver Meade</h5>
+                        <p>
+                          <img
+                            src="https://img.icons8.com/hands/30/null/experimental-star-hands.png"
+                          />FEATURED
+                        </p>
+                        <p>
+                          <img
+                            src="https://img.icons8.com/ios/30/null/moderator-male.png"
+                          />Expert Pick
+                        </p>
+                        <p>
+                          <img
+                            src="https://img.icons8.com/ios/40/null/falling-person.png"
+                          />
+                          Total Wine Employee
+                        </p>
+                        <p>Washington DC</p>
+                        <p>Review <strong>1</strong></p>
+                        <p>Vote <strong>7</strong></p>
+                      </div>
+                      <div class="col-8">
+                        <p>
+                          <img
+                            src="https://img.icons8.com/ios-glyphs/20/000000/filled-star.png"
+                          />
+                          <img
+                            src="https://img.icons8.com/ios-glyphs/25/000000/filled-star.png"
+                          />
+                          <img
+                            src="https://img.icons8.com/ios-glyphs/30/000000/filled-star.png"
+                          />
+                          <img
+                            src="https://img.icons8.com/ios-glyphs/35/000000/filled-star.png"
+                          />
+                          <img
+                            src="https://img.icons8.com/ios-filled/40/null/star-half-empty.png"
+                          />
+                        </p>
+                        <h5>Sumptuous Napa Cab!</h5>
+                        <p>a year ago</p>
+                        <p>
+                          This is a bold rich wine that oozes charm and
+                          sophistication. Finding Napa Valley Cabernet’s that
+                          can drunk for a special occasion without breaking the
+                          bank is rare but this 1858 really delivers. Loaded
+                          with dark unctuous fruits, supported by sweet spices
+                          with a balanced finish.
+                        </p>
+                        <p>
+                          <img
+                            src="https://img.icons8.com/ios-glyphs/15/null/double-tick--v1.png"
+                          />Yes,I recommend this product.
+                        </p>
+                        <span>Helpful?</span>
+                        <p>
+                          <img
+                            src="https://img.icons8.com/color/25/null/facebook-like-skin-type-3.png"
+                          />(7)
+                          <img
+                            style="margin-top: 6px"
+                            src="https://img.icons8.com/color/25/null/thumbs-down.png"
+                          />(1)
+                        </p>
+                      </div>
+                      <hr />
+                    </div>
+                    <div class="btn-group">
+                      <button class="btn">PRE</button>
+                      <button class="btn">NEXT</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- pagination -->
+        <div class="row">
+          <div
+            class="btn-toolbar"
+            role="toolbar"
+            style="margin-left: 300px"
+            aria-label="Toolbar with button groups"
+          >
+            <div class="btn-group mx-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-secondary">1</button>
+              <button type="button" class="btn btn-secondary">2</button>
+              <button type="button" class="btn btn-secondary">3</button>
+              <button type="button" class="btn btn-secondary">4</button>
+            </div>
+            <div class="btn-group mx-2" role="group" aria-label="Second group">
+              <button type="button" class="btn btn-secondary">5</button>
+              <button type="button" class="btn btn-secondary">6</button>
+              <button type="button" class="btn btn-secondary">7</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="Third group">
+              <button type="button" class="btn btn-secondary">8</button>
+              <button type="button" class="btn btn-secondary">--></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal add shopping -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Notification message popups
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h4>Thêm sản phẩm thành công</h4>
+            <br />
+            Vui lòng nhấn vào giỏ hàng để chỉnh sửa số lượng sản phầm
+          </div>
         </div>
       </div>
     </div>
