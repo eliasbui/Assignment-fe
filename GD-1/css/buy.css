@@ -119,9 +119,9 @@ a::before {
 #btn1:hover {
   background-color: antiquewhite;
 }
-img {
+/* img {
   transform: scale(0.9);
-}
+} */
 
 .card-img-top {
   margin-top: 30px;
