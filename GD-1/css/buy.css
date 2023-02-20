@@ -120,12 +120,15 @@ a::before {
   background-color: antiquewhite;
 }
 img {
-  transform: scale(0.7);
+  transform: scale(0.9);
 }
+
 .card-img-top {
+  margin-top: 30px;
   padding: 50px;
   transition: transform 0.2s; /* Animation */
   margin: 0 auto;
+  height: 100%;
 }
 .card-img-top:hover {
   transform: scale(

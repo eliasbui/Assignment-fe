@@ -14,7 +14,7 @@
     <script src="./js/crud-admin.js"></script>
     <style>
       img {
-        width: 150px;
+        height: 100px;
       }
     </style>
   </head>
@@ -26,16 +26,19 @@
       >
         <thead>
           <tr>
+            <th class="border">Id</th>
             <th class="border">Name</th>
             <th class="border">Price</th>
             <th class="border">Quantity</th>
             <th class="border">Image</th>
             <th class="border">Title</th>
-            <th class="border">Categories</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td class="border">
+              <input type="text" ng-model="idWine" />
+            </td>
             <td class="border">
               <input type="text" ng-model="nameWine" />
             </td>
@@ -55,13 +58,11 @@
             <td class="border">
               <input type="text" ng-model="titleWine" />
             </td>
-            <td class="border">
-              <input type="text" ng-model="categoriesWine" />
-            </td>
           </tr>
         </tbody>
         <thead>
           <tr>
+            <th class="border">Categories</th>
             <th class="border">Country</th>
             <th class="border">Year of Product</th>
             <th class="border">Manufacturers</th>
@@ -71,6 +72,9 @@
         </thead>
         <tbody>
           <tr>
+            <td class="border">
+              <input type="text" ng-model="categoriesWine" />
+            </td>
             <td class="border">
               <input type="text" ng-model="countryWine" />
             </td>
@@ -89,7 +93,16 @@
           </tr>
         </tbody>
       </table>
+      <img src="{{imageWine}}" alt="" />
+      <br />
+      <br />
       <button class="btn btn-primary" ng-click="addProduct()">ADD</button>
+      <button class="btn btn-primary" ng-click="updateProductByID(idWine)">
+        Update By Id - {{idWine}}
+      </button>
+      <button class="btn btn-primary" ng-click="deleteProduct(idWine)">
+        Delete By Id - {{idWine}}
+      </button>
       <br />
       <h2>DATA</h2>
       <input type="text" placeholder="Search by name" ng-model="SearchText" />
@@ -110,7 +123,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="wine in wines |filter :SearchText">
+          <tr
+            ng-repeat="wine in filteredItems |filter :SearchText"
+            ng-click="showDetailsClicked(wine)"
+          >
             <td class="border">{{wine.id}}</td>
             <td class="border">{{wine.name}}</td>
             <td class="border">{{wine.price}}</td>
@@ -123,7 +139,7 @@
                 data-bs-target="#myModal"
                 ng-click="detailProduct(wine)"
               >
-                Update
+                Details
               </button>
             </td>
             <td class="border">
@@ -134,6 +150,24 @@
           </tr>
         </tbody>
       </table>
+
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" ng-click="Previous()" id="Previous"
+            >Previous</a
+          >
+        </li>
+        <li
+          class="page-item"
+          ng-repeat="page in pageRange()"
+          ng-click="changRangePage(page)"
+        >
+          <a class="page-link" href="#">{{page}}</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" ng-click="Next()" id="Next">Next</a>
+        </li>
+      </ul>
       <div class="modal" id="myModal" ng-show="showDetail">
         <div class="modal-dialog">
           <div class="modal-content">
