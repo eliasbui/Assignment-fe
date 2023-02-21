@@ -51,7 +51,18 @@ app.controller("assignmentController", function ($scope, $http) {
   $scope.getData();
   $scope.detailWine = function (wine) {
     $scope.selectWine = wine;
-    $scope.showDetail = true;
-    6405;
   };
+  const urlShoppingCart =
+    "https://63edbc0c388920150dd1f524.mockapi.io/PH22339/Wine";
+  $scope.addProductToShoppingCart = function (id) {
+    $http.post(urlShoppingCart, { idProduct: id }).then(function (response) {
+      console.log("done");
+    });
+  };
+  $http({
+    method: "GET",
+    url: "https://63edbc0c388920150dd1f524.mockapi.io/PH22339/Wine",
+  }).then(function getData(response) {
+    $scope.products = response.data;
+  });
 });

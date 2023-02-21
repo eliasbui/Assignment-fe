@@ -123,10 +123,13 @@
               margin-right: 10px;
               border-color: rebeccapurple;
             "
-            ng-model="SearchText.name" 
+            ng-model="SearchText.name"
           />
         </form>
-        <button class="btn" style="border: none; border-radius: 5px">
+        <button
+          class="btn d-flex justify-content-center"
+          style="border: none; border-radius: 5px"
+        >
           <a href="./shopping_cart.html">
             <img
               src="https://img.icons8.com/emoji/256/shopping-cart-emoji.png"
@@ -134,6 +137,7 @@
               width="30px"
             />
           </a>
+          <h3>{{products.length}}</h3>
         </button>
 
         <button
@@ -152,39 +156,88 @@
       </div>
     </nav>
     <!-- carousel -->
-    <div id="demo" class="carousel slide top-container " data-bs-ride="carousel">
-
+    <div id="demo" class="carousel slide top-container" data-bs-ride="carousel">
       <!-- Indicators/dots -->
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        <button
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide-to="2"
+        ></button>
       </div>
-    
+
       <!-- The slideshow/carousel -->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./src/img/carousel4.jpg" alt="Los Angeles" class="d-block w-100">
+          <img
+            src="./src/img/carousel4.jpg"
+            alt="Los Angeles"
+            class="d-block w-100"
+          />
           <h3>Wine for Christmas</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, cupiditate voluptates exercitationem ipsam odio culpa voluptatum laboriosam aperiam sint, omnis pariatur quae minima. In expedita vitae eveniet hic ut nulla.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit,
+            cupiditate voluptates exercitationem ipsam odio culpa voluptatum
+            laboriosam aperiam sint, omnis pariatur quae minima. In expedita
+            vitae eveniet hic ut nulla.
+          </p>
         </div>
         <div class="carousel-item">
-          <img src="./src/img/carousel2.jpg" alt="Chicago" class="d-block w-100">
+          <img
+            src="./src/img/carousel2.jpg"
+            alt="Chicago"
+            class="d-block w-100"
+          />
           <h3>Wines</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum beatae expedita ipsam? Quis, pariatur iusto quia ut porro possimus veritatis illum. Repellendus cum ducimus mollitia iure, facilis nisi vitae culpa.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+            beatae expedita ipsam? Quis, pariatur iusto quia ut porro possimus
+            veritatis illum. Repellendus cum ducimus mollitia iure, facilis nisi
+            vitae culpa.
+          </p>
         </div>
         <div class="carousel-item">
-          <img src="./src/img/carousel3.jpg" alt="Chicago" class="d-block w-100">
+          <img
+            src="./src/img/carousel3.jpg"
+            alt="Chicago"
+            class="d-block w-100"
+          />
           <h3>Wine for Lunar Year</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At a temporibus qui ad ipsam necessitatibus dignissimos, atque similique aspernatur harum maxime quo velit voluptates autem praesentium fuga repellat, quia omnis.</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. At a
+            temporibus qui ad ipsam necessitatibus dignissimos, atque similique
+            aspernatur harum maxime quo velit voluptates autem praesentium fuga
+            repellat, quia omnis.
+          </p>
         </div>
       </div>
-    
+
       <!-- Left and right controls/icons -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon"></span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
@@ -216,7 +269,6 @@
                   class="form-control"
                   id="floatingPassword"
                   placeholder="Password"
-
                 />
                 <label for="floatingPassword">Password</label>
               </div>
@@ -421,8 +473,11 @@
         <hr />
         <!-- card item -->
         <div class="row mx-3">
-          <div class="col-auto mb-3" ng-repeat="wine in filteredItems|filter :SearchText">
-            <div class="card" style="width: 17rem  ;height: 100%;">
+          <div
+            class="col-auto mb-3"
+            ng-repeat="wine in filteredItems|filter :SearchText"
+          >
+            <div class="card" style="width: 17rem; height: 100%">
               <span class="mx-2 my-3" style="background-color: yellow">
                 <a href="">{{wine.title}} *</a>
               </span>
@@ -472,6 +527,7 @@
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   id="basic-dark-trigger"
+                  ng-click="addProductToShoppingCart(wine.id)"
                   >Add to Cart</a
                 >
                 <a href="" class="btn"
@@ -489,7 +545,7 @@
           </div>
         </div>
         <!-- full screen detail -->
-        <div class="modal" id="fullScreenModal" ng-show="showDetail">
+        <div class="modal" id="fullScreenModal" >
           <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
               <!-- Modal Header -->
